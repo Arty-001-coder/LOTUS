@@ -1,0 +1,736 @@
+{
+    "foundational_logical": {
+      "causation_analysis": {
+        "rule": "Correlation does not imply causation - systematically examine confounding variables, reverse causality, temporal sequences, and mechanism plausibility",
+        "framework": "Ask: What's the temporal order? What's the proposed mechanism? What else could explain this correlation? Could the supposed effect actually be the cause?",
+        "keywords": ["cause", "causation", "correlation", "because", "due to", "leads to", "mechanism", "temporal"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "counterfactual_reasoning": {
+        "rule": "Evaluate how changes in variables would alter outcomes; imagine alternative realities.",
+        "framework": "Ask: What if this factor were different? How would that change the outcome? What's the causal sensitivity?",
+        "keywords": ["counterfactual", "alternative", "what if", "scenario", "possibility", "change", "sensitivity", "alternate reality"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "bayesian_reasoning": {
+        "rule": "Explicitly update beliefs in proportion to evidence likelihood.",
+        "framework": "Ask: What was my prior belief? How does this evidence change it? What is my posterior confidence now?",
+        "keywords": ["bayesian", "probability", "prior", "posterior", "update", "belief", "confidence", "evidence"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "narrative_coherence_checking": {
+        "rule": "Ensure arguments or explanations form coherent, causally linked narratives rather than disjointed points.",
+        "framework": "Ask: Does this explanation form a consistent narrative? Are there gaps in causal flow or concept connections?",
+        "keywords": ["narrative", "coherence", "story", "flow", "causal", "consistency", "connected", "explanation"],
+        "complexity": "medium",
+        "cost": 3
+      },
+  
+      "evidence_hierarchies": {
+        "rule": "Not all evidence is equal - understand evidence hierarchies, methodological quality, replication status, and convergent validity across multiple sources",
+        "framework": "Ask: What type of evidence is this? How was it gathered? Has it been replicated? Do multiple independent sources converge?",
+        "keywords": ["evidence", "proof", "study", "research", "methodology", "replication", "meta-analysis"],
+        "complexity": "low",
+        "cost": 2
+      },
+      "generalization_boundaries": {
+        "rule": "Generalizations have scope conditions - identify the specific populations, contexts, and timeframes where conclusions apply vs. where they break down",
+        "framework": "Ask: Under what conditions does this hold? What are the boundary conditions? How far can I reasonably extend this conclusion?",
+        "keywords": ["all", "every", "always", "never", "universal", "general", "specific", "scope"],
+        "complexity": "low",
+        "cost": 1
+      },
+      "analogical_reasoning": {
+        "rule": "Analogies illuminate but also mislead - explicitly map structural similarities while noting where analogies break down",
+        "framework": "Ask: What's structurally similar? Where does this analogy fail? What does this comparison reveal vs. obscure?",
+        "keywords": ["like", "similar to", "analogy", "compare", "as if", "metaphor"],
+        "complexity": "low",
+        "cost": 1
+      }
+    },
+    "awareness_rules": {
+      "complexity_awareness": {
+        "rule": "Match reasoning depth to question complexity - simple questions need direct answers, complex questions require sophisticated analysis. Don't overthink easy problems or oversimplify hard ones",
+        "framework": "Ask: How complex is this question really? What level of reasoning does it warrant? Am I using appropriate cognitive resources for this problem's difficulty?",
+        "keywords": ["simple", "complex", "easy", "difficult", "basic", "advanced", "straightforward", "complicated", "depth", "analysis"],
+        "complexity": "low",
+        "cost": 0
+      },
+      "situational_awareness": {
+        "rule": "Understand the current debate context and situation—including what has been said, what patterns emerge, what your opponent's strategy is, and how to adapt your approach based on the conversation flow, your past performance, and the broader context (cultural, historical, environmental).",
+        "framework": "Ask: What patterns do I see in this debate? How has my opponent been arguing? What has worked for me before? How should I adapt my strategy based on what's happened so far? What gaps or opportunities exist? What is the current context, situation, and environment?",
+        "keywords": ["context", "conversation", "debate", "patterns", "strategy", "adapt", "previous", "opponent", "flow", "history", "learn", "adjust", "situation", "circumstance", "timing", "sequence", "phase", "stage", "environment", "setting", "background", "trend", "change", "progression", "culture", "domain", "field", "scope", "relevance", "applicability"],
+        "complexity": "medium",
+        "cost": 0
+      },
+      "emotional_awareness": {
+        "rule": "Emotional intelligence is essential for high-level reasoning. Detect, interpret, and regulate both individual and collective emotions. Analyze how emotions bias, clarify, or distort reasoning, and how emotional patterns affect both personal and group decisions. Integrate emotional data with logic for mature, context-sensitive arguments.",
+        "framework": "Ask: What emotions are present and why? How do they influence reasoning, clarity, or bias? What emotional signals are relevant for the group, not just the individual? How can I regulate or leverage emotions for better outcomes?",
+        "keywords": ["emotion", "feeling", "emotional intelligence", "regulation", "group emotion", "collective", "public", "mass psychology", "contagion", "bias", "clarity", "values", "motivation", "affect", "sentiment", "mood", "psychology", "trauma", "wellbeing", "mental", "happiness", "suffering"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "emotional_regulation": {
+        "rule": "Actively manage and regulate emotional responses—both your own and others'—to maintain reasoning clarity and constructive debate.",
+        "framework": "Ask: How can I calm, redirect, or channel emotions to support better reasoning? What techniques help maintain emotional balance in debate?",
+        "keywords": ["regulation", "manage", "calm", "redirect", "channel", "balance", "emotion", "self-control", "de-escalate", "soothe", "compose"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "collective_emotional_dynamics": {
+        "rule": "Analyze and respond to the emotional dynamics of groups, crowds, or audiences, not just individuals.",
+        "framework": "Ask: What are the dominant group emotions? How do collective feelings shape reasoning, risk, or consensus? How can I address or shift group sentiment?",
+        "keywords": ["group emotion", "collective", "crowd", "audience", "sentiment", "public", "mass psychology", "contagion", "mood", "trend", "groupthink"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "cognitive_bias_awareness": {
+        "rule": "Detect and counteract cognitive biases (confirmation, availability, anchoring, etc.) in yourself and others.",
+        "framework": "Ask: What biases might be influencing this reasoning? How can I correct for them?",
+        "keywords": ["bias", "cognitive bias", "confirmation", "availability", "anchoring", "representativeness", "motivated reasoning", "prejudice", "assumption", "stereotype"],
+        "complexity": "high",
+        "cost": 0
+      },
+  
+      "link_awareness": {
+        "rule": "Map ideas as interconnected networks rather than linear chains - identify nodes, connections, clusters, and emergent patterns",
+        "framework": "Ask: What's connected to what? Where are the dense clusters? What bridges different domains? What patterns emerge from the network structure?",
+        "keywords": ["network", "connections", "nodes", "clusters", "bridges", "patterns", "topology", "graph"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "contextual_sensitivity": {
+        "rule": "Context shapes meaning and validity - consider cultural, historical, situational, and domain-specific factors.",
+        "framework": "Ask: What's the context here? How might this change in different settings? What cultural or historical factors matter? What is the broader situation?",
+        "keywords": ["context", "situation", "culture", "environment", "setting", "background", "circumstance", "domain", "field", "scope", "relevance", "applicability"],
+        "complexity": "medium",
+        "cost": 3
+      }
+    },
+    "creativity_rules": {
+      "divergent_thinking": {
+        "rule": "Generate multiple novel solutions and ideas by breaking conventional patterns - explore unusual combinations and non-obvious connections",
+        "framework": "Ask: What if I completely reversed this? What unusual combinations exist? What would happen if I removed all constraints? What connections am I not seeing?",
+        "keywords": ["creative", "novel", "unusual", "unconventional", "brainstorm", "innovative", "original", "breakthrough"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "analogical_creativity": {
+        "rule": "Use cross-domain analogies to transfer solutions from unrelated fields - biological systems to technology, nature to design, art to science",
+        "framework": "Ask: How does nature solve this problem? What can I learn from completely different domains? What structural similarities exist across fields?",
+        "keywords": ["analogy", "transfer", "cross-domain", "biomimicry", "inspiration", "nature", "art", "music"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "constraint_liberation": {
+        "rule": "Identify and temporarily remove assumed constraints to explore impossible solutions, then work backwards to practical implementations",
+        "framework": "Ask: What constraints am I assuming? What if money/time/physics weren't limitations? How can I achieve 90% of an impossible solution?",
+        "keywords": ["constraints", "assumptions", "impossible", "limitations", "liberate", "breakthrough", "paradigm"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "combinatorial_creativity": {
+        "rule": "Systematically combine existing elements in novel ways - merge concepts, splice ideas, create hybrid solutions",
+        "framework": "Ask: What happens if I combine X with Y? What elements can I extract and recombine? What hybrid approaches might work?",
+        "keywords": ["combine", "merge", "hybrid", "splice", "remix", "synthesis", "fusion", "mashup"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "perspective_multiplication": {
+        "rule": "Generate ideas by adopting radically different perspectives - child, alien, historical figure, future human, different species",
+        "framework": "Ask: How would a child approach this? What would an alien find strange about our solution? How would people 100 years from now solve this?",
+        "keywords": ["perspective", "viewpoint", "child", "alien", "historical", "future", "species", "radically different"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "serendipity_cultivation": {
+        "rule": "Create conditions for unexpected connections and happy accidents - embrace randomness, follow tangents, notice periphery",
+        "framework": "Ask: What random elements can I introduce? What's happening at the edges of my attention? How can I increase chances of surprise?",
+        "keywords": ["serendipity", "accident", "random", "unexpected", "surprise", "periphery", "tangent", "chance"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "paradox_embrace": {
+        "rule": "Use paradoxes and contradictions as creative catalysts rather than problems to solve - both/and instead of either/or",
+        "framework": "Ask: How can both contradictory things be true? What if the paradox is the solution? How can I embrace tension instead of resolving it?",
+        "keywords": ["paradox", "contradiction", "tension", "both/and", "catalyst", "embrace", "impossible"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "thought_experimentation": {
+        "rule": "Conduct mental experiments with extreme scenarios to explore ideas beyond practical constraints",
+        "framework": "Ask: What if I had infinite resources? What if this scaled to billions? What if the opposite were true? What would break this system?",
+        "keywords": ["thought experiment", "extreme", "scenario", "infinite", "scale", "opposite", "break", "mental"],
+        "complexity": "medium",
+        "cost": 3
+      }
+    },
+    "interconnection_rules": {
+      "cascade_analysis": {
+        "rule": "Trace how changes ripple through interconnected systems - follow cascade effects, amplification loops, and distant consequences",
+        "framework": "Ask: If I change this, what else changes? How do effects amplify through the system? What distant consequences might emerge?",
+        "keywords": ["cascade", "ripple", "amplification", "effects", "distant", "consequences", "chain reaction", "propagation"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "cross_pollination": {
+        "rule": "Actively transfer insights, methods, and solutions between different domains and disciplines",
+        "framework": "Ask: How does this field solve similar problems? What can psychology teach physics? How do artists approach what scientists study?",
+        "keywords": ["transfer", "cross-pollination", "interdisciplinary", "domains", "methods", "insights", "disciplines"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "emergence_detection": {
+        "rule": "Identify emergent properties that arise from interactions but don't exist in individual components",
+        "framework": "Ask: What new properties emerge from these interactions? What exists at the system level but not the component level? How do wholes transcend parts?",
+        "keywords": ["emergence", "emergent", "properties", "interactions", "system level", "transcend", "whole"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "pattern_bridging": {
+        "rule": "Connect similar patterns across different scales, domains, and contexts to reveal universal principles",
+        "framework": "Ask: Where else do I see this pattern? What's the same structure at different scales? What universal principles connect these phenomena?",
+        "keywords": ["pattern", "bridge", "universal", "principles", "scales", "structure", "phenomena", "connect"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "symbiotic_reasoning": {
+        "rule": "Identify mutually beneficial relationships and co-evolutionary dynamics between ideas, systems, or concepts",
+        "framework": "Ask: How do these ideas strengthen each other? What co-evolves together? Where are the mutually beneficial relationships?",
+        "keywords": ["symbiotic", "mutual", "beneficial", "co-evolution", "strengthen", "relationships", "synergy"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "holistic_integration": {
+        "rule": "Integrate multiple thinking patterns simultaneously rather than using them sequentially - parallel synthesis",
+        "framework": "Ask: How can I use logical AND creative AND emotional AND intuitive thinking simultaneously? What emerges from parallel integration?",
+        "keywords": ["holistic", "integration", "simultaneous", "parallel", "synthesis", "multiple patterns", "AND"],
+        "complexity": "very_high",
+        "cost": 6
+      },
+      "meta_pattern_recognition": {
+        "rule": "Recognize patterns in how patterns connect - patterns of patterns, thinking about thinking patterns",
+        "framework": "Ask: What patterns do I see in how I connect ideas? How do my thinking patterns interact? What's the pattern in my pattern recognition?",
+        "keywords": ["meta-pattern", "patterns of patterns", "thinking patterns", "recognition", "interaction", "recursive"],
+        "complexity": "very_high",
+        "cost": 7
+      },
+      "resonance_mapping": {
+        "rule": "Identify how ideas, concepts, or systems resonate and amplify each other through harmonic relationships",
+        "framework": "Ask: What ideas resonate together? Where do I see harmonic amplification? How do concepts create interference patterns?",
+        "keywords": ["resonance", "harmonic", "amplify", "resonate", "interference", "patterns", "vibration", "frequency"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "dynamic_weaving": {
+        "rule": "Actively weave together different threads of reasoning to create stronger, more flexible argumentative fabric",
+        "framework": "Ask: How can I weave these reasoning threads together? What creates the strongest fabric? Where do I need more interconnections?",
+        "keywords": ["weave", "threads", "fabric", "interconnections", "dynamic", "flexible", "strengthen", "integrate"],
+        "complexity": "high",
+        "cost": 5
+      }
+    },
+    "intermediate_reasoning": {
+      "bias_recognition_advanced": {
+        "rule": "Identify and counteract cognitive biases - confirmation bias, availability heuristic, anchoring, representativeness, and motivated reasoning",
+        "framework": "Ask: What do I want to be true? What evidence am I ignoring? What's my first impression and why? How might I be biased?",
+        "keywords": ["bias", "prejudice", "assumption", "stereotype", "first impression", "confirmation"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "authority_evaluation_advanced": {
+        "rule": "Evaluate expertise and credibility systematically - consider domain expertise, track record, potential conflicts of interest, and consensus",
+        "framework": "Ask: What's their expertise in this specific domain? What's their track record? What are their incentives? What do other experts say?",
+        "keywords": ["expert", "authority", "credible", "source", "expertise", "qualified", "specialist"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "temporal_dynamics": {
+        "rule": "Consider how things change over time, including trends, cycles, feedback loops, and downstream consequences. Explicitly reason about the consequences and effects of arguments and decisions.",
+        "framework": "Ask: What happened before? What might happen next? Are there patterns or cycles? What are the first, second, and third-order effects? What are the long-term consequences?",
+        "keywords": ["time", "trend", "sequence", "cycle", "feedback", "evolution", "history", "future", "consequence", "change", "progression", "development", "effect", "result", "outcome", "implication", "impact", "ripple", "cascade", "chain reaction"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "contextual_sensitivity": {
+        "rule": "Context shapes meaning and validity - consider cultural, historical, situational, and domain-specific factors.",
+        "framework": "Ask: What's the context here? How might this change in different settings? What cultural or historical factors matter? What is the broader situation?",
+        "keywords": ["context", "situation", "culture", "environment", "setting", "background", "circumstance", "domain", "field", "scope", "relevance", "applicability"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "modal_reasoning": {
+        "rule": "Distinguish between what is, what could be, what must be, and what should be - necessity, possibility, and normativity",
+        "framework": "Ask: Is this necessarily true? Is it just possible? What are the alternatives? What ought to be the case?",
+        "keywords": ["must", "could", "should", "possible", "necessary", "ought", "alternative", "modal"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "abductive_reasoning": {
+        "rule": "Find the best explanation for observations - consider multiple hypotheses and evaluate their explanatory power",
+        "framework": "Ask: What would best explain this? What other explanations are possible? Which explanation has the most explanatory power?",
+        "keywords": ["explain", "because", "hypothesis", "theory", "account for", "reason why"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "epistemic_humility": {
+        "rule": "Acknowledge the limits of knowledge - uncertainty, unknowables, and the difference between confidence and certainty",
+        "framework": "Ask: How confident should I be? What don't I know? What can't be known? Where might I be overconfident?",
+        "keywords": ["uncertain", "unknown", "confidence", "doubt", "limits", "unclear", "ambiguous"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "normative_descriptive_distinction": {
+        "rule": "Separate 'is' from 'ought' - distinguish between describing how things are vs. prescribing how they should be",
+        "framework": "Ask: Am I describing what is or prescribing what should be? Are my values influencing my factual claims?",
+        "keywords": ["should", "ought", "right", "wrong", "good", "bad", "value", "moral", "ethical"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "evolutionary_systems_awareness": {
+        "rule": "Some behaviors and beliefs emerge from long-term survival pressures—evolution, not design. Understand how systems, values, or behaviors might have evolved through competition, cooperation, or adaptation.",
+        "framework": "Ask: What pressures might have shaped this behavior? Is this optimized for survival or function? What adaptations does this reflect? How might this have evolved over time rather than been consciously designed?",
+        "keywords": ["evolve", "adapt", "selection", "pressures", "survival", "evolutionary", "natural", "behavioral"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "tool_augmented_reasoning": {
+        "rule": "Use external tools (e.g. search engines, calculators, APIs) when internal reasoning is insufficient—amplify cognition through tool use.",
+        "framework": "Ask: Is there an external tool that could help me solve this better? What would I search for? What would a calculator or database tell me? What should I offload?",
+        "keywords": ["tool", "search", "calculator", "API", "plugin", "lookup", "query", "augment", "external"],
+        "complexity": "medium",
+        "cost": 3
+      }
+    },
+    "advanced_reasoning": {
+      "metacognitive_monitoring": {
+        "rule": "Monitor your own reasoning process - notice when you're making assumptions, when confidence exceeds evidence, and when emotions influence conclusions",
+        "framework": "Ask: How confident am I and why? What assumptions am I making? How might my emotions/biases be affecting this? What don't I know?",
+        "keywords": ["confidence", "assumption", "bias", "feeling", "certain", "obvious", "intuition"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "game_theoretic_reasoning": {
+        "rule": "Reason about the incentives and strategies of agents in conflict or cooperation—consider what each agent wants, believes, and can do.",
+        "framework": "Ask: What does each player want? What do they believe others will do? What are their available strategies? What are the payoffs and risks? Are there equilibria or traps?",
+        "keywords": ["incentive", "strategy", "agent", "game", "equilibrium", "rational", "conflict", "cooperate", "player"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "reasoning_strategy_selection": {
+        "rule": "Different problems require different reasoning strategies - match your approach to the problem type and explicitly choose your reasoning method",
+        "framework": "Ask: What type of problem is this? Should I use deduction, induction, abduction, or dialectical thinking? What strategy fits best?",
+        "keywords": ["strategy", "approach", "method", "type of problem", "reasoning", "logic"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "dialectical_tension": {
+        "rule": "Apparent contradictions often point to deeper truths - instead of choosing sides, explore how opposing views might both contain partial truths",
+        "framework": "Ask: How might both sides be partially right? What higher-level framework could integrate these opposing views? What's the synthesis?",
+        "keywords": ["contradiction", "opposite", "paradox", "both true", "tension", "opposing views"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "perspective_integration": {
+        "rule": "Multiple valid perspectives can coexist - actively seek to understand different viewpoints from within their own frameworks before evaluating",
+        "framework": "Ask: How does this look from their perspective? What would I believe if I had their background? What valid concerns do they raise?",
+        "keywords": ["perspective", "viewpoint", "see it differently", "their view", "background", "context"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "multi_order_consequences": {
+        "rule": "Actions have consequences that have consequences - trace through first, second, and higher-order effects",
+        "framework": "Ask: What happens next? Then what happens? What are the long-term, indirect, and unintended consequences?",
+        "keywords": ["consequences", "effects", "results", "outcomes", "impact", "implications", "then what"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "scale_dependence": {
+        "rule": "Phenomena can look different at different scales - what's true at one level may not hold at another",
+        "framework": "Ask: Does this hold at different scales? How does this look from micro vs. macro perspectives? What emerges at scale?",
+        "keywords": ["scale", "level", "micro", "macro", "individual", "group", "system", "zoom"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "dynamic_synthesis": {
+        "rule": "Truth often emerges through the interaction of ideas over time - look for evolving understanding rather than static conclusions",
+        "framework": "Ask: How has thinking on this evolved? What new synthesis might emerge? How do these ideas interact dynamically?",
+        "keywords": ["evolving", "synthesis", "interaction", "dynamic", "emergence", "over time"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "cognitive_load_management": {
+        "rule": "Manage complexity and cognitive resources effectively - break down complex problems and avoid overwhelming detail",
+        "framework": "Ask: What's the core issue? Can I break this down? What's essential vs. peripheral? How can I manage complexity?",
+        "keywords": ["complex", "overwhelming", "break down", "core", "essential", "manage", "simplify"],
+        "complexity": "high",
+        "cost": 5
+      }
+    },
+    "emergent_synthesis": {
+      "rule_fusion": {
+        "rule": "Dynamically combine multiple reasoning rules to create novel insights and approaches - blend frameworks to discover emergent understanding",
+        "framework": "Ask: Which rules could work together? What new insights emerge from combining these approaches? How do different rules complement and enhance each other?",
+        "keywords": ["combine", "fusion", "blend", "synergy", "emergent", "hybrid", "integration", "synthesis"],
+        "complexity": "very_high",
+        "cost": 7
+      },
+      "adaptive_rule_evolution": {
+        "rule": "Allow reasoning patterns to evolve and adapt during debate - let successful rule combinations become new stable patterns",
+        "framework": "Ask: What rule combinations are working well? How can we stabilize and refine these new patterns? What novel approaches are emerging?",
+        "keywords": ["evolve", "adapt", "pattern", "emerge", "refine", "develop", "novel", "innovation"],
+        "complexity": "very_high",
+        "cost": 6
+      }
+    },
+    "linguistic_fluidity": {
+      "natural_expression": {
+        "rule": "Express arguments in a more natural, conversational style while maintaining logical rigor - balance formality with accessibility",
+        "framework": "Ask: How would I explain this naturally? What analogies or examples make this more relatable? How can I maintain precision while being more conversational?",
+        "keywords": ["natural", "conversational", "relatable", "accessible", "clear", "engaging", "human", "fluid"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "rhetorical_adaptation": {
+        "rule": "Adapt communication style to audience and context - shift between formal and informal, technical and simple, direct and nuanced",
+        "framework": "Ask: Who is my audience? What style would resonate best? How can I adjust my tone and complexity appropriately?",
+        "keywords": ["adapt", "style", "tone", "audience", "context", "formal", "informal", "resonance"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "emotional_resonance": {
+        "rule": "Incorporate appropriate emotional elements to make arguments more compelling and relatable while maintaining logical validity",
+        "framework": "Ask: What emotional elements would strengthen this point? How can I connect emotionally while staying logical? What personal examples or stories could illustrate this?",
+        "keywords": ["emotion", "connect", "resonate", "story", "personal", "example", "illustrate", "relate"],
+        "complexity": "high",
+        "cost": 4
+      }
+    },
+    "expert_reasoning": {
+      "systems_interaction": {
+        "rule": "Systems have emergent properties that can't be predicted from parts alone - consider how elements interact to create new behaviors",
+        "framework": "Ask: How do these parts interact? What emerges from their interaction? What feedback loops exist? How does context change behavior?",
+        "keywords": ["system", "interaction", "emergent", "feedback", "parts", "whole", "behavior"],
+        "complexity": "very_high",
+        "cost": 6
+      },
+      "recursive_reasoning": {
+        "rule": "Some problems require reasoning about reasoning - thinking about thinking, strategies about strategies",
+        "framework": "Ask: How should I think about this? What's my reasoning about my reasoning? How do I reason about reasoning strategies?",
+        "keywords": ["recursive", "meta", "thinking about thinking", "reasoning about reasoning", "self-reference"],
+        "complexity": "very_high",
+        "cost": 6
+      },
+      "framework_integration": {
+        "rule": "Complex issues require multiple reasoning frameworks - consciously integrate insights from different types of reasoning",
+        "framework": "Ask: What do different reasoning approaches tell me? How do logical, empirical, and dialectical insights combine? What's the integrated view?",
+        "keywords": ["integrate", "combine", "multiple approaches", "different frameworks", "holistic", "comprehensive"],
+        "complexity": "very_high",
+        "cost": 7
+      },
+      "reasoning_limits_recognition": {
+        "rule": "Recognize the fundamental limits of reasoning itself - what can and cannot be resolved through rational analysis",
+        "framework": "Ask: Are there limits to what reasoning can tell me here? What lies beyond rational analysis? When should I stop reasoning?",
+        "keywords": ["limits", "beyond reasoning", "rational limits", "unknowable", "mystery", "ineffable"],
+        "complexity": "very_high",
+        "cost": 8
+      }
+    },
+    "reference_frame_rules": {
+      "virtue_ethics_frame": {
+        "rule": "Evaluate actions and decisions based on character virtues and moral excellence - focus on what kind of person one should be rather than just outcomes or duties",
+        "framework": "Ask: What would a virtuous person do? What character traits are being expressed? How does this contribute to human flourishing and excellence?",
+        "keywords": ["virtue", "character", "excellence", "flourishing", "moral", "ethics", "virtuous", "integrity"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "consequentialist_frame": {
+        "rule": "Judge actions primarily by their outcomes and consequences - focus on maximizing good results and minimizing harm across all affected parties",
+        "framework": "Ask: What are all the consequences? Who is affected and how? What produces the best overall outcomes? How do we weigh different types of harm and benefit?",
+        "keywords": ["consequences", "outcomes", "results", "utility", "harm", "benefit", "maximize", "minimize"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "deontological_frame": {
+        "rule": "Focus on duties, rights, and moral rules that apply regardless of consequences - some actions are inherently right or wrong based on their nature",
+        "framework": "Ask: What are the relevant moral duties and rights? What rules apply here? Is this action inherently right or wrong regardless of outcomes?",
+        "keywords": ["duty", "rights", "rules", "moral law", "inherent", "categorical", "obligation", "principle"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "phenomenological_frame": {
+        "rule": "Focus on lived experience and consciousness as the foundation for understanding - examine how things appear to consciousness before making theoretical assumptions",
+        "framework": "Ask: How does this appear in lived experience? What is the structure of consciousness here? What assumptions am I making before examining the phenomena themselves?",
+        "keywords": ["experience", "consciousness", "phenomena", "lived", "appear", "structure", "assumption", "theoretical"],
+        "complexity": "very_high",
+        "cost": 6
+      },
+      "systems_thinking_frame": {
+        "rule": "View problems and solutions through the lens of interconnected systems - consider relationships, feedback loops, emergent properties, and systemic interventions",
+        "framework": "Ask: What system is this part of? How do the parts interact? What feedback loops exist? What would systemic change look like?",
+        "keywords": ["system", "interconnected", "relationships", "feedback", "emergent", "systemic", "holistic", "network"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "pragmatic_frame": {
+        "rule": "Evaluate ideas and beliefs based on their practical consequences and usefulness in achieving goals - truth is what works in practice",
+        "framework": "Ask: Does this work in practice? What are the practical consequences? How useful is this for achieving our goals? What does experience teach us?",
+        "keywords": ["practical", "useful", "works", "experience", "goals", "pragmatic", "effective", "functional"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "existentialist_frame": {
+        "rule": "Emphasize individual existence, freedom, choice, and authenticity - focus on how individuals create meaning and take responsibility for their choices",
+        "framework": "Ask: What does this mean for individual freedom and responsibility? How do we create authentic meaning? What choices are we making and why?",
+        "keywords": ["freedom", "choice", "authenticity", "responsibility", "meaning", "existence", "individual", "create"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "scientific_empirical_frame": {
+        "rule": "Prioritize empirical evidence, testable hypotheses, and scientific methodology - focus on what can be measured, replicated, and falsified",
+        "framework": "Ask: What does the empirical evidence show? How can this be tested? What predictions does this make? Is this falsifiable?",
+        "keywords": ["empirical", "evidence", "testable", "measurable", "scientific", "hypothesis", "falsifiable", "replicated"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "narrative_interpretive_frame": {
+        "rule": "Understand phenomena through stories, meanings, and interpretations - focus on how narratives shape understanding and identity",
+        "framework": "Ask: What story is being told here? How do different narratives shape understanding? What meanings are being constructed?",
+        "keywords": ["story", "narrative", "meaning", "interpretation", "identity", "construct", "tell", "understand"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "critical_theory_frame": {
+        "rule": "Examine power structures, social inequalities, and systemic oppression - focus on how social arrangements benefit some groups while disadvantaging others",
+        "framework": "Ask: Who benefits from this arrangement? What power structures are at play? How do social systems create inequality? What voices are marginalized?",
+        "keywords": ["power", "inequality", "oppression", "systemic", "marginalized", "privilege", "social", "structure"],
+        "complexity": "high",
+        "cost": 4
+      }
+    },
+    "debate_action_rules": {
+      "challenge_framework": {
+        "rule": "Systematically challenge the opponent's underlying framework or assumptions rather than just surface arguments",
+        "framework": "Ask: What framework is my opponent using? What are their hidden assumptions? How can I challenge their conceptual foundation?",
+        "keywords": ["challenge", "framework", "assumptions", "foundation", "underlying", "conceptual"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "synthesize_perspectives": {
+        "rule": "Actively seek to integrate multiple perspectives into a higher-order synthesis that preserves insights from different viewpoints",
+        "framework": "Ask: How can I combine these different viewpoints? What higher-level framework encompasses both? What synthesis preserves the best insights?",
+        "keywords": ["synthesize", "integrate", "combine", "perspectives", "higher-order", "encompass"],
+        "complexity": "very_high",
+        "cost": 6
+      },
+      "introduce_counterexample": {
+        "rule": "Use specific counterexamples to test the boundaries and validity of general claims or theories",
+        "framework": "Ask: What specific case would challenge this general claim? What boundary conditions reveal the limits of this theory?",
+        "keywords": ["counterexample", "specific", "case", "challenge", "boundaries", "limits", "test"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "reframe_problem": {
+        "rule": "Shift the conceptual framing of the problem to reveal new solutions or insights - change the level of analysis or perspective",
+        "framework": "Ask: How else could we frame this problem? What if we looked at this from a different level or perspective? What new solutions emerge?",
+        "keywords": ["reframe", "perspective", "level", "conceptual", "shift", "solutions", "insights"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "escalate_abstraction": {
+        "rule": "Move to higher levels of abstraction to find commonalities or resolve apparent contradictions at lower levels",
+        "framework": "Ask: What happens if we zoom out to a higher level? What abstract principles might resolve this? What patterns emerge at higher levels of analysis?",
+        "keywords": ["abstract", "higher level", "zoom out", "principles", "patterns", "meta"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "ground_in_concrete": {
+        "rule": "Move to more concrete, specific examples to test abstract claims and make concepts tangible",
+        "framework": "Ask: What specific examples illustrate this? How does this play out in concrete cases? What are the practical implications?",
+        "keywords": ["concrete", "specific", "examples", "practical", "tangible", "real world"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "probe_hidden_assumptions": {
+        "rule": "Identify and examine unstated assumptions that underlie arguments or positions",
+        "framework": "Ask: What assumptions are we taking for granted? What unstated beliefs are shaping this argument? What would happen if we questioned these assumptions?",
+        "keywords": ["assumptions", "unstated", "hidden", "taken for granted", "underlying", "beliefs"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "bridge_perspectives": {
+        "rule": "Find connections and common ground between apparently opposing viewpoints or frameworks",
+        "framework": "Ask: Where might these different views overlap? What shared concerns or values exist? How can we build bridges between these positions?",
+        "keywords": ["bridge", "common ground", "overlap", "shared", "connect", "middle ground"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "trace_implications": {
+        "rule": "Follow the logical implications of arguments or positions to their conclusions, including unintended consequences",
+        "framework": "Ask: If this is true, what else must be true? What are all the implications? Where does this logic lead us?",
+        "keywords": ["implications", "follows from", "if then", "consequences", "leads to", "must be true"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "contextual_adaptation": {
+        "rule": "Adapt reasoning approach based on the specific context, audience, and stakes of the situation",
+        "framework": "Ask: What does this context require? Who is my audience? What are the stakes? How should I adapt my approach accordingly?",
+        "keywords": ["context", "adapt", "audience", "stakes", "situation", "adjust", "appropriate"],
+        "complexity": "medium",
+        "cost": 3
+      },
+      "argument_threading": {
+        "rule": "Track and develop argument threads over multiple turns, building on previous points and maintaining logical continuity.",
+        "framework": "Ask: How does this argument connect to earlier points? What thread am I developing? What needs to be continued or resolved?",
+        "keywords": ["thread", "continuity", "develop", "build", "connect", "sequence", "follow-up", "resolve"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "thematic_continuity": {
+        "rule": "Maintain and evolve key themes across debate turns, ensuring coherence and depth over time.",
+        "framework": "Ask: What themes are emerging? How can I deepen or evolve them? What should be carried forward?",
+        "keywords": ["theme", "continuity", "coherence", "evolve", "carry forward", "develop", "motif", "pattern"],
+        "complexity": "high",
+        "cost": 0
+      }
+    },
+    "cognitive_architecture": {
+      "reference_frame_switching": {
+        "rule": "Consciously reframe the question or argument from multiple perspectives (ethical, empirical, pragmatic, etc.) to uncover new insights and reduce blind spots. Also blend frames when possible for richer synthesis.",
+        "framework": "For each major point, ask: How would this look from a scientific, ethical, practical, or personal perspective? What changes? What remains true? Can I blend insights from multiple frames?",
+        "keywords": ["frame", "perspective", "reframe", "reference frame", "multiple viewpoints", "thousand brains", "blend", "integration"],
+        "complexity": "very_high",
+        "cost": 0
+      },
+      "sensorimotor_prediction": {
+        "rule": "Predict the likely cognitive and behavioral responses that different arguments or approaches will generate",
+        "framework": "Ask: How will others likely respond to this argument? What cognitive reactions will this trigger? What behavioral patterns might emerge?",
+        "keywords": ["predict", "response", "reaction", "behavior", "cognitive", "trigger"],
+        "complexity": "high",
+        "cost": 4
+      },
+      "hierarchical_reasoning": {
+        "rule": "Organize reasoning across multiple hierarchical levels - from concrete details to abstract principles to meta-cognitive awareness",
+        "framework": "Ask: What level am I reasoning at? How do insights at different levels connect? What emerges when I integrate across levels?",
+        "keywords": ["hierarchy", "levels", "meta", "abstract", "concrete", "integrate"],
+        "complexity": "very_high",
+        "cost": 7
+      },
+      "cortical_column_simulation": {
+        "rule": "Simulate how different cognitive modules might process the same information independently and then integrate their outputs",
+        "framework": "Ask: How would different cognitive systems process this? What would logical analysis say vs. pattern recognition vs. emotional evaluation? How do I integrate these different processing results?",
+        "keywords": ["modules", "systems", "process", "integrate", "cognitive", "parallel"],
+        "complexity": "very_high",
+        "cost": 8
+      },
+      "displacement_learning": {
+        "rule": "Learn general principles from specific cases and apply them to novel situations through cognitive displacement",
+        "framework": "Ask: What general principle does this specific case teach? How can I apply this learning to other domains? What is the underlying pattern that transfers?",
+        "keywords": ["learn", "transfer", "apply", "general", "principle", "pattern"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "parallel_processing": {
+        "rule": "Process information through multiple cognitive pathways simultaneously - logical, intuitive, emotional, and pattern-based - then integrate results",
+        "framework": "Ask: What does pure logic say? What does intuition suggest? What emotional signals exist? What patterns do I recognize? How do these converge or conflict?",
+        "keywords": ["parallel", "logical", "intuitive", "emotional", "pattern", "integrate", "simultaneous"],
+        "complexity": "very_high",
+        "cost": 8
+      },
+      "meta_reasoning_monitor": {
+        "rule": "Continuously monitor and evaluate your own reasoning process while reasoning - reasoning about reasoning in real-time",
+        "framework": "Ask: How is my reasoning going? What strategies am I using? Are they working? Should I switch approaches? What biases might be affecting me right now?",
+        "keywords": ["monitor", "evaluate", "meta", "reasoning process", "strategies", "real-time", "switch"],
+        "complexity": "very_high",
+        "cost": 7
+      },
+      "cognitive_resource_allocation": {
+        "rule": "Dynamically allocate cognitive resources based on problem complexity, available time, and strategic importance",
+        "framework": "Ask: How much cognitive effort does this deserve? Where should I focus my mental resources? What can I handle with minimal processing vs. what needs deep analysis?",
+        "keywords": ["allocate", "resources", "effort", "focus", "processing", "analysis", "priority"],
+        "complexity": "high",
+        "cost": 5
+      },
+      "contextual_memory_integration": {
+        "rule": "Explicitly use memory and context from previous turns to inform current reasoning, making connections and avoiding repetition.",
+        "framework": "Ask: What have I already established? How can I build on or contrast with previous arguments? What context is most relevant now?",
+        "keywords": ["memory", "context", "previous", "established", "build on", "contrast", "avoid repetition", "connect", "history"],
+        "complexity": "very_high",
+        "cost": 0
+      }
+    },
+    "mentor_synthesis_rules": {
+      "synthesis_best_practices": {
+        "rule": "When synthesizing a debate, integrate the strongest points from both sides, highlight areas of agreement and disagreement, and provide a balanced, well-reasoned conclusion that acknowledges complexity.",
+        "framework": "Summarize the main arguments, identify convergences/divergences, and offer a nuanced synthesis that reflects the debate's evolution.",
+        "keywords": ["synthesis", "integration", "summary", "conclusion", "balance", "debate", "best practices"],
+        "complexity": "very_high",
+        "cost": 0
+      }
+    },
+    "cognitive_scaffolding_rules": {
+      "reference_frame_switching": {
+        "rule": "Consciously reframe the question or argument from multiple perspectives (ethical, empirical, pragmatic, etc.) to uncover new insights and reduce blind spots. Also blend frames when possible for richer synthesis.",
+        "framework": "For each major point, ask: How would this look from a scientific, ethical, practical, or personal perspective? What changes? What remains true? Can I blend insights from multiple frames?",
+        "keywords": ["frame", "perspective", "reframe", "reference frame", "multiple viewpoints", "thousand brains", "blend", "integration"],
+        "complexity": "very_high",
+        "cost": 0
+      },
+      "meta_reasoning_self_critique": {
+        "rule": "After each argument or synthesis, generate a self-critique or meta-reflection: What might be missing? What would a critic say? What assumptions are untested?",
+        "framework": "After making a point, ask: What are the weaknesses in this argument? What would my opponent say? What evidence could challenge this?",
+        "keywords": ["meta-reasoning", "self-critique", "reflection", "assumptions", "bias", "critique"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "argument_decomposition": {
+        "rule": "Break down complex questions into sub-questions and address each part before synthesizing a final answer.",
+        "framework": "Ask: What are the main components or sub-questions here? How can I answer each part separately before integrating?",
+        "keywords": ["decompose", "sub-question", "break down", "component", "chain", "stepwise"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "opponent_modeling": {
+        "rule": "Explicitly model what the other side would argue, and address the strongest possible counterarguments.",
+        "framework": "Ask: What is the best argument my opponent could make? How can I address or integrate it?",
+        "keywords": ["opponent", "counterargument", "steelman", "model other side", "debate"],
+        "complexity": "high",
+        "cost": 0
+      },
+      "frame_blending": {
+        "rule": "Blend multiple reference frames (ethical, empirical, pragmatic, etc.) in a single argument or synthesis for greater depth and nuance.",
+        "framework": "Ask: How can I combine insights from different frames, not just switch between them? What new understanding emerges from blending?",
+        "keywords": ["blend", "integration", "frame", "perspective", "synthesis", "multi-frame", "hybrid"],
+        "complexity": "very_high",
+        "cost": 0
+      }
+    },
+    "temporal_reasoning_rules": {
+      "consequence_analysis": {
+        "rule": "Explicitly reason about the consequences and downstream effects of arguments and decisions.",
+        "framework": "Ask: If this is true or we do this, what happens next? What are the first, second, and third-order effects?",
+        "keywords": ["consequence", "effect", "result", "outcome", "implication", "impact", "ripple", "cascade", "chain reaction"],
+        "complexity": "medium",
+        "cost": 2
+      }
+    },
+    "sensorimotor_reasoning_rules": {
+      "sensorimotor_reasoning": {
+        "rule": "Use physical, spatial, or embodied analogies to clarify abstract concepts.",
+        "framework": "Ask: How would this work as a physical process? Can I imagine it spatially or as a movement?",
+        "keywords": ["spatial", "physical", "movement", "embodied", "analogy", "simulation", "imagine", "mechanism", "force", "structure", "shape", "path"],
+        "complexity": "medium",
+        "cost": 2
+      },
+      "spatial_analogy": {
+        "rule": "Apply spatial or geometric analogies to reason about relationships and processes.",
+        "framework": "Ask: Is there a shape, path, or structure that helps explain this? How do the parts fit together?",
+        "keywords": ["spatial", "geometry", "shape", "path", "structure", "fit", "arrangement", "layout", "map", "distance", "direction"],
+        "complexity": "medium",
+        "cost": 2
+      }
+    }
+  }
